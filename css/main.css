@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    font-family: 'Press Start 2P', cursive;
+}
+.game-name small {
+    display: block;
+    font-size: 0.5em;
+    font-weight: 400;
+    line-height: 1;
+    color: #777;
+}
+.table-score {
+    font-size: 0.8em;
+}
+.mt-100 {
+    margin-top: 100px;
+}
+.hide-initial {
+    display: none;
+}
+#name-valid {
+    font-size: 0.7em;
+}
