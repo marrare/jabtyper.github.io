@@ -54,6 +54,7 @@ const resetGame = () => {
     $("#block-name").slideDown(1000);
     
     campo.attr("disabled", false);
+    $("#name").val("");
     campo.val("");
     $("#caracteres-digitados").text("0");
     $("#palavras-digitadas").text("0");
