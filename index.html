@@ -13,43 +13,78 @@
     <div class="container">
         <div class="row mt-100">
             <div class="col-12 text-center page-header">
-                <h1 class="game-name">JabTyper<small>how fast are you ?</small></h1>   
+                <h1 class="game-name">JabTyperV2<small>how fast are you ?</small></h1>   
             </div>
         </div>
 
         <div class="row mt-100" id="block-name">
             <div class="col-md-4 offset-md-3">
-                <input id="name" class="form-control form-control-sm" type="text" placeholder="Nome do Jogador">
+                <input id="name" class="form-control form-control-sm" type="text" placeholder="Nome do Jogador" onkeypress="pressEnterLoadPage(event)">
                 <span id="name-valid" class="text-danger hide-initial">Name is required</span>
             </div>
             <div class="col-md-1"><button type="button" class="btn btn-success btn-sm" onclick="loadPageGame()">ready!</button></div>
+
+            <div class="col-md-5 offset-md-3 dificult-style">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="dificuldade" id="dificuldadeFacil" value="1">
+                    <label class="form-check-label" for="dificuldadeFacil">Fácil</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="dificuldade" id="dificuldadeMedia" value="2">
+                    <label class="form-check-label" for="dificuldadeMedia">Médio</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="dificuldade" id="dificuldadeDificil" value="3">
+                    <label class="form-check-label" for="dificuldadeDificil">Difícil</label>
+                </div>
+                <div>
+                    <span id="dificuldade-valid" class="text-danger hide-initial">Dificuldade is required</span>
+                </div>
+            </div>
+            
+            
         </div>
 
-        <div class="mt-100 hide-initial" id="block-game">
-            <div class="progress progress-striped active">
-                <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"><span id="tempo"></span></div>
+        <div class="hide-initial" id="block-game">
+            
+            <div class="style-frase">
+                <div id="frase"></div>
             </div>
-            <textarea class="form-control" id="digitacao" rows="5"></textarea>
-            <div class="row mt-1">
-                <div class="col-md-6">
-                    <p class="text-center">caracteres</p>
-                    <p id="caracteres-digitados" class="text-center">0</p>
+
+            <div class="hide-initial" id="block-count-start">
+                <h1 class="hide-initial" id="countThree">3</h1>
+                <h1 class="hide-initial" id="countTwo">2</h1>
+                <h1 class="hide-initial" id="countOne">1</h1>
+            </div>
+
+
+            <div class="hide-initial" id="block-game-text">
+                <div class="progress progress-striped active">
+                    <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100" width="100%"><span id="tempo"></span></div>
                 </div>
-                <div class="col-md-6">
-                    <p class="text-center">palavras</p>
-                    <p id="palavras-digitadas" class="text-center">0</p>
+                <textarea class="form-control" id="digitacao" rows="5"></textarea>
+                <div class="row mt-1">
+                    <div class="col-md-6">
+                        <p class="text-center">caracteres</p>
+                        <p id="caracteres-digitados" class="text-center">0</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="text-center">palavras</p>
+                        <p id="palavras-digitadas" class="text-center">0</p>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="row mt-100 hide-initial" id="block-score">
-            <div class="col-md-8 offset-md-2 table-score">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8 table-score">
                 <h3 class="page-title text-center">Score</h3>
                 <table id="score" class="table table-hover">
                     <thead class="thead-dark">
                         <tr class="active">
                             <th width="100px">Player</th>
-                            <th width="100px">Nº de Palavras</th>
+                            <th width="100px">Acertos</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -57,14 +92,14 @@
                     </tbody>
                 </table>
             </div>
-            <div class="class-md-2">
+            <div class="col-sm-2">
                 <button type="button" class="btn btn-success btn-sm" onclick="resetGame()">play again</button>
             </div>
         </div>
     </div>
 
     <script src="js/jquery.js"></script>
-    <script src="js/main.js"></script>
     <script src="js/indexedDB.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

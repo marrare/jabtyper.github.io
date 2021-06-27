@@ -19,6 +19,45 @@ body {
 .hide-initial {
     display: none;
 }
-#name-valid {
+#name-valid, #dificuldade-valid {
     font-size: 0.7em;
+}
+
+
+.style-frase {
+    margin: 10vh auto 6vh;
+    width: 80%;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #ddd;
+    font-size: 0.8em;
+}
+
+.dificult-style {
+    margin-top: 20px;
+    font-size: 0.8em;
+}
+
+.dificult-style div {
+    padding: 0px;
+}
+
+.dificult-style span {
+    font-size: 0.8em !important;
+}
+
+#block-count-start {
+    background-color: #00e1ff;
+    border: 2px double #00cbe6;
+    width: 7%;
+    border-radius: 50px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+#block-count-start h1 {
+    margin: 0px;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 2px black;
 }
